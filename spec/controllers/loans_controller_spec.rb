@@ -54,7 +54,7 @@ RSpec.describe LoansController, type: :controller do
 
     context 'if the loan is not found' do
       it 'responds with a 404' do
-        get :show, params: { id: 10000 }
+        get :show, params: { id: -1 }
         expect(response).to have_http_status(:not_found)
       end
     end

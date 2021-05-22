@@ -6,6 +6,12 @@ class Payment < ActiveRecord::Base
 
   validate :amount_cannot_exceed_outstanding_balance
 
+  def to_builder
+    Jbuilder.new do |payment|
+      payment.(self, :id, :amount)
+    end
+  end
+
   private
 
   def amount_cannot_exceed_outstanding_balance

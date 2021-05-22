@@ -13,5 +13,4 @@ class Loan < ActiveRecord::Base
       # loan.payments self.payments, :amount
     end
   end
-
 end
